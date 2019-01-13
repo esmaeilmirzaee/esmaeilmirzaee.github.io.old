@@ -1,0 +1,26 @@
+figure {
+    position: relative;
+}
+figcaption {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.5rem;
+    font-size: small;
+    font-style: italic;
+    color: #6c5f7c;
+}
+
+pre, code {
+    font-family: monospace, monospace;
+}
+pre {
+    overflow: auto;
+}
+pre > code {
+    background: beige;
+    font-style: italic;
+    color: #6c5f7c;
+    display: block;
+    padding: 0.5rem;
+    word-wrap: normal;
+}
