@@ -7,18 +7,10 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="../../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <link href="../../layout/styles/code.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
-<!-- ################################################################################################ -->
-<html lang="">
-<head>
-  <title>Lalapeden</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link href="../../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-</head>
-<body id="top">
-<!-- ################################################################################################ -->
+<!-- #################################################################################### -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row1">
@@ -55,7 +47,10 @@
       <p>
         Unlikely, at the time of writing this blog, there is no active repository on Debian repoisotry list. Hence, we should use the one which Docker offers. The task of adding the repository starts by updating the <em>apt</em>.
       </p>
-      <pre><code>$ apt-get update</code></pre>
+      <figure>
+        <!--<figcaption>Updating the OS</figcaption>-->
+          <pre><code>$ apt-get update</code></pre>
+      </figure>
       <p>
         Then we should install several prerequisite packages, which will be needed during the installation.
 
