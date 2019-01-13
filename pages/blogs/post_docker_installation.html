@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Esmaeil MIRZAEE's Personal Website</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="../../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<html lang="en">
+<head>
+  <title>BASE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="../../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="../index.html">Esmaeil MIRZAEE</a></h1>
+
+    </div>
+    <nav id="mainav" class="fl_right">
+      <ul class="clear">
+        <li class="active"><a href="../../index.html">Home</a></li>
+        <li class="active"><a href="../research.html">Research</a></li>
+        <li class="active"><a href="../blog.html">Blog</a></li>
+        <li class="active"><a href="../publication.html">Publication</a></li>
+        <li class="active"><a href="../about.html">About</a></li>
+      </ul>
+    </nav>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+
+<!--MAIN CONTENT-->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content three_quarter first">
+      <h1><strong><center>Enabling proxy setting on Docker CE</center></strong></h1>
+      <p><b>Post-installation</b></p>
+
+      <p>To verify docker group is created, use the following command:</p>
+      <pre><code>$ cat /etc/group</code></pre>
+      or
+      <pre><code>$ getent group</code></pre>
+      Unless docker group does not exist, run
+      <pre><code>sudo groupadd docker</code></pre>
+      <p>
+        Replace <em>user-name</em> with your username. You can get infromation about your username by prompting <em>whoami</em> on the command line.
+      </p>
+      <pre><code>sudo usermod -aG docker "user-name"</code></pre>
+
+      <p><b>How to set proxy for Docker CE</b></p>
+      <p>
+        If your machine/server is behind a proxy server, in order to use Docker CE you should follow a few more steps. Configuring Docker CE is straightforward task. Well lets start:
+      </p>
+      1. create a systemd drop-in directory for Docker:
+      <pre><code>mkdir -p /etc/systemd/system/docker.service.d</code></pre>
+
+      <p>2. Create a file or open a file named 'http-proxy.conf' and/or 'https-proxy.conf' if you need 'http' and/or 'https', repectively:
+      </p>
+      2.1. http
+      <pre><code>touch /etc/systemd/system/docker.service.d/http-proxy.conf</code></pre>
+
+      2.2. https
+      <pre><code>touch /etc/systemd/system/docker.service.d/https-proxy.conf</code></pre>
+
+      <p>3. Add the following lines into the proper configure file:</p>
+
+      3.1. Configuring proxy behind a <em>https</em> server
+      <pre><code>[Service]
+        Environment="HTTP_PROXY=http://proxy.example.com:80/"</code></pre>
+
+      3.2. Configuring proxy behind a <em>http</em> server
+      <pre><code>[Service]
+        Environment="HTTPS_PROXY=https://proxy.example.com:80/"</code></pre>
+
+      <p>4. Enabling the latest altering</p>
+      <pre><code>$ sudo systemctl daemon-reload</code></pre>
+
+      <p>5. Rebooting the Docker deamon:</p>
+      <pre><code>$ sudo systemctl restart docker</code></pre>
+
+      <p>6. Verifying the Environment variables</p>
+      <pre><code>systemctl show --property=Environment docker</code></pre>
+
+    </div>
+  </main>
+</div>
+
+
+    <!--FOOTER-->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row4">
+      <footer id="footer" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <h6 class="heading">Personal Website</h6>
+        <p>In this website, I provide first and foremost research related projects which I work on.</p>
+        <ul class="faico clear">
+          <li><a class="faicon-vk" href="#"><i class="fa fa-google"></i></a></li>
+          <li><a class="faicon-vk" href="#"><i class="fa fa-github"></i></a></li>
+          <li><a class="faicon-vk" href="#"><i class="fa fa-stack-overflow"></i></a></li>
+          <li><a class="faicon-vk" href="#"><i class="fa fa-bitbucket"></i></a></li>
+        </ul>
+        <nav>
+          <ul class="nospace">
+            <li><a href="../../index.html"><i class="fa fa-lg fa-home"></i></a></li>
+            <li><a href="../../pages/research.html">Research</a></li>
+            <li><a href="../../pages/blog.html">Blog</a></li>
+            <li><a href="../../pages/publication.html">Publication</a></li>
+            <li><a href="../../pages/about.html">About</a></li>
+          </ul>
+        </nav>
+        <!-- ################################################################################################ -->
+      </footer>
+    </div>
+
+
+
+
+    <div class="wrapper row5">
+      <div id="copyright" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <p class="fl_left"><a href="http://esmaeilmirzaee.github.io">Updated in January 2019 - Esmaeil MIRZAEE</a></p>
+        <p class="fl_right">Esmaeil MIRZAEE's Website <a target="_blank" href="http://www.esmaeilmirzaee.github.io/" title="Esmaeil MIRZAEE's Personal Website"></a></p>
+        <!-- ################################################################################################ -->
+      </div>
+    </div>
+
+
+
+
+    <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JAVASCRIPTS -->
+    <script src="../../layout/scripts/jquery.min.js"></script>
+    <script src="../../layout/scripts/jquery.backtotop.js"></script>
+    <script src="../../layout/scripts/jquery.mobilemenu.js"></script>
+    <script src="../../layout/scripts/jquery.flexslider-min.js"></script>
+</body>
+</html>
